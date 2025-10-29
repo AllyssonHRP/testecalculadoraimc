@@ -45,6 +45,7 @@ public class MainController implements Initializable {
     TableColumn<Pessoa, Float> colAltura;
     @FXML
     TableColumn<Pessoa, Float> colIMC;
+    private int proximoID = 0;
 
     Pessoa pessoa;
     List<Pessoa> listaPessoas;
@@ -59,7 +60,7 @@ public class MainController implements Initializable {
     }
 
     public void vinculoComTabela(){
-        colId.setCellValueFactory( new PropertyValueFactory<>("id"));
+        colId.setCellValueFactory( new PropertyValueFactory<>("ID"));
         colNome.setCellValueFactory( new PropertyValueFactory<>("nome"));
         colPeso.setCellValueFactory( new PropertyValueFactory<>("peso"));
         colAltura.setCellValueFactory( new PropertyValueFactory<>("altura"));
@@ -78,6 +79,8 @@ public class MainController implements Initializable {
     @FXML
     public void onClickSalvarIMC(){
         lerFormulario();
+        int novoID = ++proximoID;
+        this.pessoa.setID(novoID);
         this.listaPessoas.add(pessoa);
         atualizarTableView();
     }

@@ -5,15 +5,17 @@ public class Pessoa {
     private float altura;
     private float peso;
     private float imc;
+    private int ID;
 
     public Pessoa() {
     }
 
-    public Pessoa(String nome, float altura, float peso, float imc) {
+    public Pessoa(String nome, float altura, float peso, float imc,int ID) {
         this.nome = nome;
         this.altura = altura;
         this.peso = peso;
         this.imc = imc;
+        this.ID = ID;
     }
 
     public String getNome() {
@@ -46,6 +48,14 @@ public class Pessoa {
 
     public void setImc(float imc) {
         this.imc = imc;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     @Override
